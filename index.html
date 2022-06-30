@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pause and Play</title>
+</head>
+<style>
+    #container{
+        width: 400px;
+        margin: auto;
+        /* background-color: aqua; */
+        margin-top:255px ;
+
+    }
+    #icon{
+        width: 80px;
+        margin-left: 155px;
+    }
+    @media screen {
+        
+    }
+</style>
+<body>
+    <main id="container">
+        <img src="play-solid.svg" alt="pause-button" srcset=""  id="icon">
+        <audio id="mysound" src="dhruv - double take.mp3" type="audio/mp3"></audio>
+    </main>
+    <script>
+        var mysound = document.getElementById("mysound");
+        var icon = document.getElementById("icon");
+        icon.onclick = function(){
+            if (mysound.paused){
+                mysound.play();
+                icon.src = "circle-pause-solid.svg";
+            }
+            else{
+                mysound.pause();
+                icon.src = "play-solid.svg";
+            }
+        }
+    </script>
+</body>
+</html>
