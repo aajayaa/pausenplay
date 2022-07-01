@@ -1,45 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pause and Play</title>
-</head>
-<style>
-    #container{
-        width: 400px;
-        margin: auto;
-        /* background-color: aqua; */
-        margin-top:255px ;
-
+  </head>
+  <style>
+    body {
+      background-color: brown;
     }
-    #icon{
-        width: 80px;
-        margin-left: 155px;
+    #container {
+      display: grid;
+      align-content: center;
+      width: 400px;
+      /* justify-content: center; */
+      /* justify-content: space-evenly;
+      align-items: center;  */
+      /* width: 400px; */
+      margin: auto;
+      background-color: aqua;
+      margin-top: 255px;
+      padding: auto;
     }
-    @media screen {
-        
+    #icon-fast {
+      width: 80px;
     }
-</style>
-<body>
+    #icon {
+      width: 80px;
+      /* margin-left: 155px; */
+    }
+    #icon-back {
+      width: 80px;
+    }
+    #icon-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-evenly;
+      align-content: center;
+      /* padding: 300px 300px; */
+    }
+  </style>
+  <body>
     <main id="container">
-        <img src="play-solid.svg" alt="pause-button" srcset=""  id="icon">
-        <audio id="mysound" src="dhruv - double take.mp3" type="audio/mp3"></audio>
+      <div id="icon-container">
+        <img
+          src="backward-solid.svg"
+          alt="pause-button"
+          srcset=""
+          id="icon-back"
+          class="icon"
+        />
+        <img
+          src="circle-play-solid.svg"
+          alt="pause-button"
+          srcset=""
+          id="icon"
+          class="icon"
+        />
+        <img
+          src="forward-solid.svg"
+          alt="pause-button"
+          srcset=""
+          id="icon-fast"
+          class="icon"
+        />
+      </div>
+
+      <audio
+        id="mysound"
+        src="dhruv - double take.mp3"
+        type="audio/mp3"
+      ></audio>
     </main>
     <script>
-        var mysound = document.getElementById("mysound");
-        var icon = document.getElementById("icon");
-        icon.onclick = function(){
-            if (mysound.paused){
-                mysound.play();
-                icon.src = "circle-pause-solid.svg";
-            }
-            else{
-                mysound.pause();
-                icon.src = "play-solid.svg";
-            }
+      var mysound = document.getElementById("mysound");
+      var icon = document.getElementById("icon");
+      icon.onclick = function () {
+        if (mysound.paused) {
+          mysound.play();
+          icon.src = "circle-pause-solid.svg";
+        } else {
+          mysound.pause();
+          icon.src = "circle-play-solid.svg";
         }
+      };
     </script>
-</body>
+  </body>
 </html>
